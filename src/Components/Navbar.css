@@ -1,0 +1,22 @@
+.Navbar
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 5px;
+    position:sticky;
+    top: 0px;
+    z-index: 100;
+    background-color: black
+}
+.Logo img , .Avatar img
+{
+    height: 25px;
+}
+.Logo img
+{
+    color: white;
+}
+.Sun
+{
+    padding: 0px 10px;
+}
