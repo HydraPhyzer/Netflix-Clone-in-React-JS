@@ -1,9 +1,12 @@
 import axios from './RequestMaker';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useContext } from 'react'
 import './Poster.css'
+import { MoviesRowContext } from '../App';
+import movieTrailer from 'movie-trailer';
 
 const Poster = ({ Props }) => {
     let [state, setState] = useState([]);
+    let Func=useContext(MoviesRowContext);
 
     useEffect(() => {
         let MyFunc = async () => {
@@ -15,6 +18,21 @@ const Poster = ({ Props }) => {
         }
         MyFunc()
     }, [Props])
+
+    let IDFetcher=(Name)=>
+    {
+        let VGet;
+        movieTrailer(Name)
+        .then((Res)=>
+        {
+            const Param=new URLSearchParams(new URL(Res).search);
+            VGet=Param.get('v');
+        })
+        .then(()=>
+        {
+            Func(VGet)
+        })
+    }
     return (
         <div className='Poster' 
             style={{
@@ -29,7 +47,7 @@ const Poster = ({ Props }) => {
             <div className="Bottom">
                 <h3>{state?.name}</h3>
                 <div className="Buttons">
-                    <button>Play Now</button>
+                    <button onClick={()=>{IDFetcher(state?.name)}}>Play Now</button>
                     <button>My Lists</button>
                 </div>
                 <p>

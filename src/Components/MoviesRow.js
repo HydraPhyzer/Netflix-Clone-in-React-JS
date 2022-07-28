@@ -6,7 +6,7 @@ import movieTrailer from 'movie-trailer';
 
 const MoviesRow = ({ Props }) => {
     let [Movies, setMovies] = useState([]);
-    let Func=useContext(MoviesRowContext)
+    let Func=useContext(MoviesRowContext);
     let IMGURL = `https://image.tmdb.org/t/p/original/`;
 
     useEffect(() => {
