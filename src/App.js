@@ -6,7 +6,7 @@ import MoviesRow from './Components/MoviesRow'
 const App = () => {
   return (
     <div>
-      <MoviesRow Props={{Title:"Netflix Originals" ,URL: Obj.Originals}} />
+      <MoviesRow Props={{Title:"Netflix Originals" ,URL: Obj.Originals, Wide:true}} />
       <MoviesRow Props={{Title:"Trending" ,URL: Obj.Trending}} />
       <MoviesRow Props={{Title:"Top Netflix" ,URL: Obj.Top}} />
       <MoviesRow Props={{Title:"Action" ,URL: Obj.Action}} />

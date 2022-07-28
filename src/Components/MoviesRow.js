@@ -23,7 +23,7 @@ const MoviesRow = ({ Props }) => {
                 {
                     Movies.map((Film, Ind) => {
                         return (
-                            <img className='Images' src={`${IMGURL}${Film.poster_path}`} alt={`${Film.title}`} key={Ind} />
+                                <img className={Props.Wide===true?"Wider":"Images"}src={`${IMGURL}${Film.poster_path}`} alt={`${Film.title}`} key={Ind} />
                         )
                     })
                 }
