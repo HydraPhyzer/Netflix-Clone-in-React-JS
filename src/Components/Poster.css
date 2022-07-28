@@ -1,0 +1,58 @@
+.Poster
+{
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    font-weight: bold;
+
+    position: relative;
+}
+.Bottom
+{
+    width: 50%;
+    padding: 0px 10%;
+}
+.Bottom button
+{
+    padding: 5px 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    margin: 0px 5px 10px 0px;
+
+    border-radius: 5px;
+}
+.Blackish
+{
+    position: absolute;
+    bottom: 0px;
+    height: 50px;
+    background: linear-gradient(180deg , transparent , rgba(37,37,37,0.61) , #111);
+    width: 100%;
+}
+.Poster h3
+{
+    font-weight: bold;
+}
+
+@media(max-width:750px)
+{
+    .Bottom
+    {
+        width: 80%;
+    }
+}
+@media(max-width:450px)
+{
+    .Bottom
+    {
+        width: 90%;
+        margin-top: 20%;
+        object-fit:cover;
+        margin: 0px;
+    }
+}

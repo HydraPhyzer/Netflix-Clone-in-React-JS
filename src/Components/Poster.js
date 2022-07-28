@@ -1,9 +1,47 @@
-import React from 'react'
+import axios from './RequestMaker';
+import React, { useEffect, useState } from 'react'
 import './Poster.css'
 
-const Poster = ({Props}) => {
+const Poster = ({ Props }) => {
+    let [state, setState] = useState([]);
+
+    useEffect(() => {
+        let MyFunc = async () => {
+            let New = await axios.get(Props);
+            let { results } = await New.data;
+
+            let Rand=Math.floor(Math.random()*results.length-1);
+            setState(results[Rand]);
+        }
+        MyFunc()
+    }, [Props])
     return (
-        <div className='Poster'>Poster</div>
+        <div className='Poster' 
+            style={{
+                backgroundImage:`url(https://image.tmdb.org/t/p/original${state?.backdrop_path})`,
+                backgroundPosition:"center center",
+                backgroundSize:"cover",
+                backgroundRepeat:"no-repeat",
+                width:"100%"
+            }}>
+
+
+            <div className="Bottom">
+                <h3>{state?.name}</h3>
+                <div className="Buttons">
+                    <button>Play Now</button>
+                    <button>My Lists</button>
+                </div>
+                <p>
+                    {
+                        state?.overview?.substr(0,150).concat(" ....")
+                    }
+                </p>
+            </div>
+
+            <div className="Blackish"></div>
+        </div>
+
     )
 }
 

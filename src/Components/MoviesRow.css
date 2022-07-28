@@ -3,8 +3,8 @@
     display: flex;
     flex-direction: column;
     width: 99%;
-    margin: 5px 0px 10px 5px;
     overflow-x: scroll;
+    padding-left: 5px;
 }
 .Album
 {
@@ -38,6 +38,10 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     animation-timing-function:ease-out;
+}
+.MoviesRow .Title
+{
+    padding-left: 5px;
 }
 @keyframes Harry
 {
