@@ -1,0 +1,30 @@
+.MoviesRow
+{
+    display: flex;
+    flex-direction: column;
+    width: 99%;
+    margin: 5px 0px 10px 5px;
+}
+.Album
+{
+    display: flex;
+    overflow-x: scroll;
+}
+.Album::-webkit-scrollbar
+{
+   display: none; 
+}
+.Images
+{
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+@media(max-width:450px)
+{
+    .Images
+    {
+        width: 100px;
+        object-fit: contain;
+    }
+}

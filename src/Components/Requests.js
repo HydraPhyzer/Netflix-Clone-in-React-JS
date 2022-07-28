@@ -3,6 +3,7 @@
 let APIKey = `512f02bfeaad808b483c6f3bb546db74`;
 
 let Obj={
+    Originals:`/discover/tv?api_key=${APIKey}&with_networks=213`,
     Trending:`/trending/all/week?api_key=${APIKey}`,
     Top:`/movie/top_rated?api_key=${APIKey}&language=en-US`,
     Action:`/discover/movie?api_key=${APIKey}&with_genres=28`,
